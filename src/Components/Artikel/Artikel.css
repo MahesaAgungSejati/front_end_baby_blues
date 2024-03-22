@@ -1,0 +1,126 @@
+.artikel {
+    text-align: center;
+    margin: 20px 50px;
+    margin-top: -70px;
+}
+
+.artikel-card:hover {
+    transform: translateY(-10px); /* Menggeser card ke atas saat kursor diarahkan */
+}
+.artikel h1 {
+    color: #171717;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.artikel hr {
+    width: 200px;
+    height: 6px;
+    border: none;
+    margin: 0px auto 30px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    background: #252525;
+    margin-bottom: 20px;
+    background: #FFC93C;
+}
+
+.artikel-item {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.artikel-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.artikel-card img {
+    width: 460px;
+    height: 300px;
+    margin-top: 20px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.artikel-text {
+    width: 459px;
+    height: 270px;
+    text-align: left;
+    padding: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.artikel-text h2 {
+    color: #B4D4FF;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.artikel-text h1 {
+    color: #555;
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+.artikel-text p {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.artikel-text button {
+    background-color: #07689F;
+    width: 175px;
+    font-family: 'poppins';
+    font-weight: 450;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    margin-left: 245px;
+    margin-bottom: 5px;
+    padding: 10px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.artikel-text button:hover {
+    background-color: #ACE2E1;
+}
+
+.view-all {
+    display: flex;
+    justify-content: center; /* Menengahkan secara horizontal */
+    margin-top: 50px;
+    margin-bottom: 25px; /* Atur jarak antara card dengan tombol "Lihat Semua" */
+}
+
+.view-all button {
+    border-radius: 24px;
+    border: none;
+    font-family: 'Poppins';
+    font-size: 14px;
+    font-weight: 600;
+    height: 46px;
+    width: 200px;
+    background: #07689F;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 1px 0px 2px 2px hsla(1, 1%, 1%, 0.1); /* Menambahkan transisi untuk background-color dan transform */
+}
+
+.view-all button:hover {
+    transform: scale(1.1); /* Mengubah skala tombol saat cursor diarahkan */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
