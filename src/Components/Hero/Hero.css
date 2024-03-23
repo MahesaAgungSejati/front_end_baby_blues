@@ -1,6 +1,6 @@
 .hero{
     height: 85vh;
-    background: #EEF5FF;
+    /* background: #EEF5FF; */
     display: flex;
     margin-bottom: 100px;
 }
@@ -20,9 +20,24 @@
     font-weight: 600;
     margin-top: 70px;
 }
-
-.hero-left p{
+.hero-left h3{
+    margin-top: 60px;
+    /* margin-right: 90px; */
     color: #171717;
+    font-size: 15px;
+    font-weight: 500;
+    padding-right: 80px;
+    gap: 20px;
+}
+
+.hero-left h1{
+    color: #171717;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.hero-left p{
+    color: #EC744A;
     font-size: 40px;
     font-weight: 700;
     margin-bottom: 20px;
@@ -32,7 +47,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 750px;
+    width: 600px;
+    margin-top: 90px;
+    margin-right: 130px;
 }
 .hero-hand-icon{
     display: flex;
@@ -51,7 +68,7 @@
     height: 70px;
     border-radius: 60px;
     margin-top: 30px;
-    background: #07689F;
+    background: #EC744A;
     color: white;
     font-size: 22px;
     font-weight: 400;

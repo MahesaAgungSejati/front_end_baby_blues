@@ -1,17 +1,21 @@
 import React from 'react'
 import './Quiz.css'
-import ambil_tes_image_3 from '../Assets/ambil_tes_image_3.jpg'
+import ambil_tes_image_5 from '../Assets/ambil_tes_image_5.png'
 export const Quiz = () => {
   return (
     <div className='quiz'>
-        <div className='quiz-left'>
+      <div className="quiz-left">
+            <img src={ambil_tes_image_5} alt='' />
+        </div>
+
+        <div className='quiz-right'>
         <h1>Ambil Tes</h1>
         <h1>Sindrom Baby Blues</h1>
-        <p>PERIKSA CEPAT DAN DAPATKAN LANGSUNG HASILNYA</p>
+        <h2>PERIKSA CEPAT DAN DAPATKAN LANGSUNG HASILNYA</h2>
+        <p>Lorem ipsum dolor sit amet consectetur. Convallis est urna adipiscing fringilla nulla diam lorem non mauris.
+          Ultrices aliquet at quam adipiscing feugiat interdum mattis. Placerat donec risus diam sed et.
+          A in ullamcorper ipsum justo vestibulum sit cursus A risus donec eget enim</p>
         <button>Yuk, Mulai Tes!</button>
-        </div>
-        <div className="quiz-right">
-            <img src={ambil_tes_image_3} alt='' />
         </div>
     </div>
   )

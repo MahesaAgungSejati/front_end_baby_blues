@@ -5,7 +5,8 @@
     align-items: center;
     gap: 50px;
     /* margin-top: 200px; */
-    background: #055584;
+    background: rgb(94,180,124);
+    background: linear-gradient(90deg, rgba(94,180,124,1) 35%, rgba(0,125,110,1) 100%);
 }
 .footer-logo{
     display: flex;

@@ -1,7 +1,6 @@
 .artikel {
     text-align: center;
     margin: 20px 50px;
-    margin-top: -70px;
 }
 
 .artikel-card:hover {
@@ -11,7 +10,16 @@
     color: #171717;
     font-size: 36px;
     font-weight: 600;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
+}
+.artikel h3{
+  font-size: 17px;
+  text-align: center;
+  margin-left: 200px;
+  margin-right: 200px;
+  font-weight: 400;
+  color: rgb(128, 128, 118);
+  margin-bottom: 50px;
 }
 
 .artikel hr {
@@ -24,7 +32,8 @@
     border-radius: 10px;
     background: #252525;
     margin-bottom: 20px;
-    background: #FFC93C;
+    background: rgb(94,180,124);
+    background: linear-gradient(90deg, rgba(94,180,124,1) 35%, rgba(0,125,110,1) 100%);
 }
 
 .artikel-item {
@@ -80,7 +89,7 @@
 }
 
 .artikel-text button {
-    background-color: #07689F;
+    background-color: #EC744A;
     width: 175px;
     font-family: 'poppins';
     font-weight: 450;
@@ -102,7 +111,7 @@
 .view-all {
     display: flex;
     justify-content: center; /* Menengahkan secara horizontal */
-    margin-top: 50px;
+    margin-top: 100px;
     margin-bottom: 200px; /* Atur jarak antara card dengan tombol "Lihat Semua" */
 }
 
@@ -110,11 +119,11 @@
     border-radius: 24px;
     border: none;
     font-family: 'Poppins';
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 600;
     height: 46px;
-    width: 200px;
-    background: #07689F;
+    width: 220px;
+    background: #20433D;
     color: white;
     transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 1px 0px 2px 2px hsla(1, 1%, 1%, 0.1); /* Menambahkan transisi untuk background-color dan transform */

@@ -34,7 +34,7 @@
     height: 49px;
     width: 80px;
     padding: 8px 16px;
-    background-color: #07689F;
+    background-color: #28574E;
     font-family: 'poppins';
     font-size: 14px;
     font-weight: 600;
@@ -65,7 +65,8 @@
     font-weight: 600;
     height: 50px;
     width: 200px;
-    background: #07689F;
+    background: rgb(94,180,124);
+    background: linear-gradient(90deg, rgba(94,180,124,1) 35%, rgba(0,125,110,1) 100%);
     color: white;
     transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
@@ -137,7 +138,7 @@
   font-weight: 600;
   height: 46px;
   width: 200px;
-  background: #07689F;
+  background: #EC744A;
   color: white;
   transition: background-color 0.3s ease, transform 0.2s ease;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;

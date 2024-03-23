@@ -23,29 +23,31 @@
     flex-direction: column;
     align-items: center;
     margin: 0 30px;
-    height: 440px;
+    height: 410px;
     max-width: 486px;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px 2px hsla(0, 0%, 0%, 0.1); /* Memberikan margin antar media */
+    border-radius: 20px;
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
 }
 .media-container-left {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0 30px;
-    height: 440px;
+    height: 410px;
     max-width: 485px;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px 2px hsla(0, 0%, 0%, 0.1)/* Memberikan margin antar media */
+    border-radius: 20px;
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;/* Memberikan margin antar media */
 }
 
 .media-info {
     text-align: left;
+    margin-top: 20px;
 }
 
 .popular-item img {
     max-width: 100%;
     height: auto;
+    margin-top: 40px;
     margin-bottom: 20px; /* Mengurangi jarak antara gambar dan judul */
     border-radius: 6px;
 }
@@ -54,8 +56,10 @@
     width: 200px;
     height: 6px;
     border-radius: 10px;
-    background: #FFC93C;
+    background: rgb(94,180,124);
+    background: linear-gradient(90deg, rgba(94,180,124,1) 35%, rgba(0,125,110,1) 100%);
     border: none;
+    margin-bottom: 20px;
 }
 
 .popular-item h2 {
@@ -71,6 +75,7 @@
 
 .popular-item button {
     margin-left: 320px;
+    margin-top: 10px;
     border-radius: 18px;
     border: none;
     font-family: 'Poppins', sans-serif;
@@ -78,6 +83,6 @@
     font-weight: 500;
     height: 40px;
     width: 145px;
-    background: #FFC93C;
+    background: #EC744A;
     color: white;
 }

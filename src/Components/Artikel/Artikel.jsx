@@ -9,6 +9,8 @@ export const Artikel = () => {
     <div className='artikel'>
       <hr />
       <h1>Artikel Terbaru</h1>
+      <h3>"Dalam artikel ini, ibu akan menjelajahi strategi pencegahan, perawatan, dan aspek kesehatan lainnya
+        yang berkaitan dengan kondisi ibu. Segera temukan informasi yang berharga untuk membantu ibu"</h3>
       <div className='artikel-item'>
         <div className='artikel-card'>
           <img src={artikel_1} alt='' />

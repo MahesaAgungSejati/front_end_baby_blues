@@ -3,19 +3,31 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  height: 90vh;
+  height: 100vh;
+  /* background-image: url("../Assets/banner_psikolog.png"); */
 }
 .psikolog hr{
   width: 200px;
   height: 6px;
   border-radius: 10px;
-  background: #FFC93C;
+  background: rgb(94,180,124);
+  background: linear-gradient(90deg, rgba(94,180,124,1) 35%, rgba(0,125,110,1) 100%);
   border: none;
+  margin-bottom: 20px;
 }
 .psikolog h1{
-  color: #171717;
-  font-size:40px;
+  color: black;
+  font-size: 40px;
   font-weight: 600;
+  margin-bottom: 25px;
+}
+.psikolog h5{
+  font-size: 17px;
+  text-align: center;
+  margin-left: 200px;
+  margin-right: 200px;
+  font-weight: 400;
+  color: rgb(128, 128, 118);
 }
 
 :root {
@@ -56,7 +68,8 @@ body {
 
 .card__image {      
   width: 100%;
-  height: 300px;
+  height: auto;
+  border-color: black;
 }
 
 .card__overlay {

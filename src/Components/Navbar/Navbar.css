@@ -31,7 +31,8 @@
     width: 100%;
     height: 3px;
     border-radius: 10px;
-    background: #07689F;
+    background: rgb(94,180,124);
+    background: linear-gradient(90deg, rgba(94,180,124,1) 35%, rgba(0,125,110,1) 100%);
 }
 .nav-login-cart{
     display: flex;
@@ -43,9 +44,9 @@
     width: 157px;
     height: 50px;
     outline: none;
-    border: 2px solid #07689F;
+    border: 2px solid #EC744A;
     border-radius: 80px;
-    color: #07689F;
+    color: #EC744A;
     font-size: 20px;
     font-weight: 550;
     font-family: 'poppins';
