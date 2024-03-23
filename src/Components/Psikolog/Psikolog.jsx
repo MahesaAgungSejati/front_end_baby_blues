@@ -10,7 +10,7 @@ export const Psikolog = () => {
     <div className='psikolog'>
         <hr />
         <h1>Mau Pilih Psikolog Sendiri?, Bisa Banget!!</h1>
-        <ul class="cards">
+  <ul class="cards">
   <li>
     <a href="" class="card">
       <img src={psikolog_1} class="card__image" alt="" />

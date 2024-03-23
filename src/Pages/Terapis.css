@@ -1,0 +1,55 @@
+.konsul-online{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px
+}
+.konsul-online-text{
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 165px;
+    margin-right: 165px;
+}
+.konsul-online-text h1{
+  font-size: 40px;
+  font-weight: 600;
+  font-family: 'poppins';
+  margin-bottom: 20px;
+}
+.konsul-online-text p{
+    font-family: 'poppins';
+    color: #5559;
+}
+.cards{
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.information{
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    align-items: center;
+    background: #EEF5FF;
+    width: auto;
+    height: 300px;
+}
+.container-info{
+    margin-left: 165px;
+    margin-right: 165px;
+    margin-top: 100px;
+}
+.container-info h1{
+    font-size: 22px;
+    padding-top: 50px;
+    margin-bottom: 10px;
+}
+.container-info h2{
+    color: rgb(93, 93, 87);
+    font-size: 16px;
+    margin-bottom: 14px;
+}
+.container-info p{
+    font-size: 15px;
+    color: rgb(128, 128, 118);
+    margin-bottom: 12px;
+}

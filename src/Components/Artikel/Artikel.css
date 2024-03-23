@@ -11,6 +11,7 @@
     color: #171717;
     font-size: 36px;
     font-weight: 600;
+    margin-bottom: 50px;
 }
 
 .artikel hr {
@@ -102,7 +103,7 @@
     display: flex;
     justify-content: center; /* Menengahkan secara horizontal */
     margin-top: 50px;
-    margin-bottom: 25px; /* Atur jarak antara card dengan tombol "Lihat Semua" */
+    margin-bottom: 200px; /* Atur jarak antara card dengan tombol "Lihat Semua" */
 }
 
 .view-all button {
