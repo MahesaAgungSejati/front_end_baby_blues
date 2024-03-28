@@ -3,7 +3,7 @@ import'./Psikolog.css';
 import psikolog_1 from '../Assets/psikolog_1.jpg';
 import psikolog_2 from '../Assets/psikolog_2.jpg';
 import psikolog_3 from '../Assets/psikolog_3.jpg';
-import psikolog_4 from '../Assets/psikolog_4.jpg';
+// import psikolog_4 from '../Assets/psikolog_4.jpg';
 
 export const Psikolog = () => {
   return (
