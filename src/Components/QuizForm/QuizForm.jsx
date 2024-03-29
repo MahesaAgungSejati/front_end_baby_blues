@@ -3,23 +3,30 @@ import axios from 'axios';
 
 function QuizForm() {
   const [jawaban, setJawaban] = useState(Array(10).fill(0));
+  const baseUrl = 'http://localhost:8080';
 
   const handleOptionClick = (group, value) => {
     const newJawaban = [...jawaban];
     newJawaban[group] = value;
     setJawaban(newJawaban);
+    updateTotalScore();
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8080/kuisioner/simpanHasil', { jawaban });
+      const dataToSend = {
+        jawaban: jawaban
+      };
+
+      const response = await axios.post(`${baseUrl}/simpanHasil`, dataToSend);
       console.log('Jawaban berhasil disimpan:', response.data);
+
+      setJawaban(Array(10).fill(0));
     } catch (error) {
       console.error('Gagal menyimpan jawaban:', error.message);
     }
   };
-  
 
   const updateTotalScore = () => {
     let totalScore = 0;
@@ -32,14 +39,14 @@ function QuizForm() {
   return (
     <div>
       <h1>Kuisioner</h1>
-      <form action="http://localhost:8080/kuisioner/simpanHasil" method="post" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         {/* Pertanyaan 1 */}
         <p>I have been able to laugh and see the funny side of things:</p>
         <button type="button" className="option-btn" data-value="0" data-group="0" onClick={() => handleOptionClick(0, 0)}>As much as I always could</button>
         <button type="button" className="option-btn" data-value="1" data-group="0" onClick={() => handleOptionClick(0, 1)}>Not quite so much now</button>
         <button type="button" className="option-btn" data-value="2" data-group="0" onClick={() => handleOptionClick(0, 2)}>Definitely not so much now</button>
         <button type="button" className="option-btn" data-value="3" data-group="0" onClick={() => handleOptionClick(0, 3)}>Not at all</button>
-        <input type="hidden" name="jawaban[]" id="jawaban0" value="0" />
+
         <br /><br />
 
         {/* Pertanyaan 2 */}
@@ -129,4 +136,3 @@ function QuizForm() {
 }
 
 export default QuizForm;
-
