@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import './QuizForm.css';
 
 function QuizForm() {
   const [jawaban, setJawaban] = useState(Array(10).fill(0));
   const baseUrl = 'http://localhost:8080';
+  const navigate = useNavigate();
 
   const handleOptionClick = (group, value) => {
     const newJawaban = [...jawaban];
@@ -19,10 +22,10 @@ function QuizForm() {
         jawaban: jawaban
       };
 
-      const response = await axios.post(`${baseUrl}/simpanHasil`, dataToSend);
-      console.log('Jawaban berhasil disimpan:', response.data);
-
+      await axios.post(`${baseUrl}/simpanHasil`, dataToSend);
       setJawaban(Array(10).fill(0));
+      
+      navigate('/HasilQuiz');
     } catch (error) {
       console.error('Gagal menyimpan jawaban:', error.message);
     }
@@ -36,101 +39,114 @@ function QuizForm() {
     console.log('Total Skor:', totalScore);
   };
 
+  const handleButtonClick = event => {
+    const currentValue = parseInt(event.currentTarget.dataset.value);
+    const currentGroup = parseInt(event.currentTarget.dataset.group);
+    const newJawaban = [...jawaban];
+    newJawaban[currentGroup] = currentValue;
+    setJawaban(newJawaban);
+    updateTotalScore();
+
+    // Set style for clicked button
+    event.currentTarget.style.backgroundColor = '#EC744A';
+    event.currentTarget.style.color = 'white';
+    
+    // Set style for other buttons in the same group
+    const buttonsInGroup = document.querySelectorAll(`.option-btn[data-group="${currentGroup}"]`);
+    buttonsInGroup.forEach(button => {
+      if (button !== event.currentTarget) {
+        button.style.backgroundColor = '';
+        button.style.color = '';
+      }
+    });
+  };
+
   return (
-    <div>
-      <h1>Kuisioner</h1>
-      <form onSubmit={handleSubmit}>
-        {/* Pertanyaan 1 */}
-        <p>I have been able to laugh and see the funny side of things:</p>
-        <button type="button" className="option-btn" data-value="0" data-group="0" onClick={() => handleOptionClick(0, 0)}>As much as I always could</button>
-        <button type="button" className="option-btn" data-value="1" data-group="0" onClick={() => handleOptionClick(0, 1)}>Not quite so much now</button>
-        <button type="button" className="option-btn" data-value="2" data-group="0" onClick={() => handleOptionClick(0, 2)}>Definitely not so much now</button>
-        <button type="button" className="option-btn" data-value="3" data-group="0" onClick={() => handleOptionClick(0, 3)}>Not at all</button>
+    <div className='tes-sindrom'>
+      <div className="tes-sindrom-nama">
+        <h1>Tes Edinburgh Postnatal Depression Scale (EPDS)</h1>
+        <h2>Ini adalah kesempatan bagi bunda untuk mengekspresikan isi hati dan perasaan Bunda dengan jujur. Oleh karena itu mohon isi kuisioner sesuai perasaan bunda</h2>
+      </div>
+      <div className="tes-sindrom-container">
+        <div className="tes-sindrom-soal">
+          <form onSubmit={handleSubmit}>
+            {/* Pertanyaan 1 */}
+            <p>1. Saya bisa tertawa dan melihat sisi lucu dari berbagai hal :</p>
+            <button type="button" className="option-btn" data-value="0" data-group="0" onClick={handleButtonClick}>Sebanyak yang saya bisa</button>
+            <button type="button" className="option-btn" data-value="1" data-group="0" onClick={handleButtonClick}>Sekarang tidak terlalu banyak</button>
+            <button type="button" className="option-btn" data-value="2" data-group="0" onClick={handleButtonClick}>Tidak banyak sekarang</button>
+            <button type="button" className="option-btn" data-value="3" data-group="0" onClick={handleButtonClick}>Tidak sama sekali</button>
 
-        <br /><br />
+            {/* Pertanyaan 2 */}
+            <p>2. Saya telah menantikan dengan senang hati berbagai hal :</p>
+            <button type="button" className="option-btn" data-value="0" data-group="1" onClick={handleButtonClick}>Sebanyak yang pernah saya lakukan</button>
+            <button type="button" className="option-btn" data-value="1" data-group="1" onClick={handleButtonClick}>Agak lebih sedikit daripada yang saya lakukan dulu</button>
+            <button type="button" className="option-btn" data-value="2" data-group="1" onClick={handleButtonClick}>Sedikit sekali daripada yang saya lakukan dulu</button>
+            <button type="button" className="option-btn" data-value="3" data-group="1" onClick={handleButtonClick}>Hampir tidak sama sekali</button>
 
-        {/* Pertanyaan 2 */}
-        <p>I have looked forward with enjoyment to things:</p>
-        <button type="button" className="option-btn" data-value="0" data-group="1" onClick={() => handleOptionClick(1, 0)}>As much as I ever did</button>
-        <button type="button" className="option-btn" data-value="1" data-group="1" onClick={() => handleOptionClick(1, 1)}>Rather less than I used to</button>
-        <button type="button" className="option-btn" data-value="2" data-group="1" onClick={() => handleOptionClick(1, 2)}>Definitely less than I used to</button>
-        <button type="button" className="option-btn" data-value="3" data-group="1" onClick={() => handleOptionClick(1, 3)}>Hardly at all</button>
-        <input type="hidden" name="jawaban[]" id="jawaban1" value="0" />
-        <br /><br />
+            {/* Pertanyaan 3 */}
+            <p>3. Saya telah menyalahkan diri saya sendiri secara tidak perlu ketika terjadi kesalahan :</p>
+            <button type="button" className="option-btn" data-value="0" data-group="2" onClick={handleButtonClick}>Tidak, tidak pernah</button>
+            <button type="button" className="option-btn" data-value="1" data-group="2" onClick={handleButtonClick}>Tidak terlalu sering</button>
+            <button type="button" className="option-btn" data-value="2" data-group="2" onClick={handleButtonClick}>Ya, kadang-kadang</button>
+            <button type="button" className="option-btn" data-value="3" data-group="2" onClick={handleButtonClick}>Ya, hampir setiap saat</button>
 
-        {/* Pertanyaan 3 */}
-        <p>I have blamed myself unnecessarily when things went wrong:</p>
-        <button type="button" className="option-btn" data-value="3" data-group="2" onClick={() => handleOptionClick(2, 3)}>Yes, most of the time</button>
-        <button type="button" className="option-btn" data-value="2" data-group="2" onClick={() => handleOptionClick(2, 2)}>Yes, some of the time</button>
-        <button type="button" className="option-btn" data-value="1" data-group="2" onClick={() => handleOptionClick(2, 1)}>Not very often</button>
-        <button type="button" className="option-btn" data-value="0" data-group="2" onClick={() => handleOptionClick(2, 0)}>No, never</button>
-        <input type="hidden" name="jawaban[]" id="jawaban2" value="0" />
-        <br /><br />
+            {/* Pertanyaan 4 */}
+            <p>4. Saya merasa cemas atau khawatir tanpa alasan yang jelas :</p>
+            <button type="button" className="option-btn" data-value="0" data-group="3" onClick={handleButtonClick}>Tidak, tidak sama sekali</button>
+            <button type="button" className="option-btn" data-value="1" data-group="3" onClick={handleButtonClick}>Hampir tidak pernah</button>
+            <button type="button" className="option-btn" data-value="2" data-group="3" onClick={handleButtonClick}>Ya, terkadang</button>
+            <button type="button" className="option-btn" data-value="3" data-group="3" onClick={handleButtonClick}>Ya, sangat sering</button>
 
-        {/* Pertanyaan 4 */}
-        <p>I have been anxious or worried for no good reason:</p>
-        <button type="button" className="option-btn" data-value="0" data-group="3" onClick={() => handleOptionClick(3, 0)}>No, not at all</button>
-        <button type="button" className="option-btn" data-group="3" onClick={() => handleOptionClick(3, 1)}>Hardly ever</button>
-        <button type="button" className="option-btn" data-value="2" data-group="3" onClick={() => handleOptionClick(3, 2)}>Yes, sometimes</button>
-        <button type="button" className="option-btn" data-value="3" data-group="3" onClick={() => handleOptionClick(3, 3)}>Yes, very often</button>
-        <input type="hidden" name="jawaban[]" id="jawaban3" value="0" />
-        <br /><br />
+            {/* Pertanyaan 5 */}
+            <p>5. Saya merasa takut atau panik tanpa alasan yang jelas :</p>
+            <button type="button" className="option-btn" data-value="0" data-group="4" onClick={handleButtonClick}>Tidak, tidak sama sekali</button>
+            <button type="button" className="option-btn" data-value="1" data-group="4" onClick={handleButtonClick}>Tidak, tidak banyak</button>
+            <button type="button" className="option-btn" data-value="2" data-group="4" onClick={handleButtonClick}>Ya, terkadang</button>
+            <button type="button" className="option-btn" data-value="3" data-group="4" onClick={handleButtonClick}>Ya, cukup banyak</button>
 
-        {/* Pertanyaan 5 */}
-        <p>I have felt scared or panicky for no good reason:</p>
-        <button type="button" className="option-btn" data-value="3" data-group="4" onClick={() => handleOptionClick(4, 3)}>Yes, quite a lot</button>
-        <button type="button" className="option-btn" data-value="2" data-group="4" onClick={() => handleOptionClick(4, 2)}>Yes, sometimes</button>
-        <button type="button" className="option-btn" data-value="1" data-group="4" onClick={() => handleOptionClick(4, 1)}>No, not much</button>
-        <button type="button" className="option-btn" data-value="0" data-group="4" onClick={() => handleOptionClick(4, 0)}>No, not at all</button>
-        <input type="hidden" name="jawaban[]" id="jawaban4" value="0" />
-        <br /><br />
+            {/* Pertanyaan 6 */}
+            <p>6. Banyak hal yang terjadi pada saya :</p>
+            <button type="button" className="option-btn" data-value="0" data-group="5" onClick={handleButtonClick}>Tidak, saya telah mengatasinya dengan baik seperti biasa</button>
+            <button type="button" className="option-btn" data-value="1" data-group="5" onClick={handleButtonClick}>Tidak, sebagian besar waktu, saya telah mengatasinya dengan cukup baik</button>
+            <button type="button" className="option-btn" data-value="2" data-group="5" onClick={handleButtonClick}>Ya, terkadang saya belum mengatasi sebaik biasanya</button>
+            <button type="button" className="option-btn" data-value="3" data-group="5" onClick={handleButtonClick}>Ya, sebagian besar waktu, saya belum mampu mengatasinya sama sekali</button>
 
-        {/* Pertanyaan 6 */}
-        <p>Things have been getting to me:</p>
-        <button type="button" className="option-btn" data-value="3" data-group="5" onClick={() => handleOptionClick(5, 3)}>Yes, most of the time I haven’t been able to cope at all</button>
-        <button type="button" className="option-btn" data-value="2" data-group="5" onClick={() => handleOptionClick(5, 2)}>Yes, sometimes I haven’t been coping as well as usual</button>
-        <button type="button" className="option-btn" data-value="1" data-group="5" onClick={() => handleOptionClick(5, 1)}>No, most of the time I have coped quite well</button>
-        <button type="button" className="option-btn" data-value="0" data-group="5" onClick={() => handleOptionClick(5, 0)}>No, I have been coping as well as ever</button>
-        <input type="hidden" name="jawaban[]" id="jawaban5" value="0" />
-        <br /><br />
+            {/* Pertanyaan 7 */}
+            <p>7. Saya sangat tidak bahagia sehingga saya mengalami kesulitan tidur :</p>
+            <button type="button" className="option-btn" data-value="0" data-group="6" onClick={handleButtonClick}>Tidak, tidak sama sekali</button>
+            <button type="button" className="option-btn" data-value="1" data-group="6" onClick={handleButtonClick}>Tidak, tidak terlalu sering</button>
+            <button type="button" className="option-btn" data-value="2" data-group="6" onClick={handleButtonClick}>Ya, terkadang</button>
+            <button type="button" className="option-btn" data-value="3" data-group="6" onClick={handleButtonClick}>Ya, sebagian besar waktu</button>
 
-        {/* Pertanyaan 7 */}
-        <p>I have been so unhappy that I have had difficulty sleeping:</p>
-        <button type="button" className="option-btn" data-value="3" data-group="6" onClick={() => handleOptionClick(6, 3)}>Yes, most of the time</button>
-        <button type="button" className="option-btn" data-value="2" data-group="6" onClick={() => handleOptionClick(6, 2)}>Yes, sometimes</button>
-        <button type="button" className="option-btn" data-value="1" data-group="6" onClick={() => handleOptionClick(6, 1)}>No, not very often</button>
-        <button type="button" className="option-btn" data-value="0" data-group="6" onClick={() => handleOptionClick(6, 0)}>No, not at all</button>
-        <input type="hidden" name="jawaban[]" id="jawaban6" value="0" />
-        <br /><br />
+            {/* Pertanyaan 8 */}
+            <p>8. Saya merasa sedih atau menderita :</p>
+            <button type="button" className="option-btn" data-value="0" data-group="7" onClick={handleButtonClick}>Tidak, tidak sama sekali</button>
+            <button type="button" className="option-btn" data-value="1" data-group="7" onClick={handleButtonClick}>Tidak terlalu sering</button>
+            <button type="button" className="option-btn" data-value="2" data-group="7" onClick={handleButtonClick}>Ya, cukup sering</button>
+            <button type="button" className="option-btn" data-value="3" data-group="7" onClick={handleButtonClick}>Ya, sebagian besar waktu</button>
 
-        {/* Pertanyaan 8 */}
-        <p>I have felt sad or miserable:</p>
-        <button type="button" className="option-btn" data-value="3" data-group="7" onClick={() => handleOptionClick(7, 3)}>Yes, most of the time</button>
-        <button type="button" className="option-btn" data-value="2" data-group="7" onClick={() => handleOptionClick(7, 2)}>Yes, quite often</button>
-        <button type="button" className="option-btn" data-value="1" data-group="7" onClick={() => handleOptionClick(7, 1)}>Not very often</button>
-        <button type="button" className="option-btn" data-value="0" data-group="7" onClick={() => handleOptionClick(7, 0)}>No, not at all</button>
-        <input type="hidden" name="jawaban[]" id="jawaban7" value="0" />
-        <br /><br />
+            {/* Pertanyaan 9 */}
+            <p>9. Saya sangat tidak bahagia sampai-sampai saya menangis :</p>
+            <button type="button" className="option-btn" data-value="0" data-group="8" onClick={handleButtonClick}>Tidak pernah</button>
+            <button type="button" className="option-btn" data-value="1" data-group="8" onClick={handleButtonClick}>Hanya sesekali</button>
+            <button type="button" className="option-btn" data-value="2" data-group="8" onClick={handleButtonClick}>Ya, cukup sering</button>
+            <button type="button" className="option-btn" data-value="3" data-group="8" onClick={handleButtonClick}>Ya, sebagian besar waktu</button>
 
-        {/* Pertanyaan 9 */}
-        <p>I have been so unhappy that I have been crying:</p>
-        <button type="button" className="option-btn" data-value="3" data-group="8" onClick={() => handleOptionClick(8, 3)}>Yes, most of the time</button>
-        <button type="button" className="option-btn" data-value="2" data-group="8" onClick={() => handleOptionClick(8, 2)}>Yes, quite often</button>
-        <button type="button" className="option-btn" data-value="1" data-group="8" onClick={() => handleOptionClick(8, 1)}>Only occasionally</button>
-        <button type="button" className="option-btn" data-value="0" data-group="8" onClick={() => handleOptionClick(8, 0)}>No, never</button>
-        <input type="hidden" name="jawaban[]" id="jawaban8" value="0" />
-        <br /><br />
+            {/* Pertanyaan 10 */}
+            <p>10. Pikiran untuk melukai diri sendiri pernah terlintas di benak saya :</p>
+            <button type="button" className="option-btn" data-value="0" data-group="9" onClick={handleButtonClick}>Tidak pernah</button>
+            <button type="button" className="option-btn" data-value="1" data-group="9" onClick={handleButtonClick}>Hampir tidak pernah</button>
+            <button type="button" className="option-btn" data-value="2" data-group="9" onClick={handleButtonClick}>Terkadang</button>
+            <button type="button" className="option-btn" data-value="3" data-group="9" onClick={handleButtonClick}>Cukup sering</button>
 
-        {/* Pertanyaan 10 */}
-        <p>The thought of harming myself has occurred to me:</p>
-        <button type="button" className="option-btn" data-value="3" data-group="9" onClick={() => handleOptionClick(9, 3)}>Yes, quite often</button>
-        <button type="button" className="option-btn" data-value="2" data-group="9" onClick={() => handleOptionClick(9, 2)}>Sometimes</button>
-        <button type="button" className="option-btn" data-value="1" data-group="9" onClick={() => handleOptionClick(9, 1)}>Hardly ever</button>
-        <button type="button" className="option-btn" data-value="0" data-group="9" onClick={() => handleOptionClick(9, 0)}>Never</button>
-        <input type="hidden" name="jawaban[]" id="jawaban9" value="0" />
-        <br /><br />
-        <button type="submit">Simpan</button>
-      </form>
+            {/* Buttons */}
+            <div className="tes-sindrom-submit">
+              <button type="submit">Selesai Mengerjakan</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   );
 }

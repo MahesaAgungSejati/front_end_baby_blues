@@ -8,6 +8,7 @@ import { Forum } from './Pages/Forum';
 import { Terapis } from './Pages/Terapis';
 import { SOS } from './Pages/SOS';
 import QuizForm from './Components/QuizForm/QuizForm';
+import HasilQuiz from './Components/QuizForm/HasilQuiz';
 
 import React from 'react';
 import Footer from './Components/Footer/Footer';
@@ -27,6 +28,7 @@ function App() {
             <Route path=':terapisId' element={<Terapis />} />
           </Route>
           <Route path='/QuizForm' element={<QuizForm />} />
+          <Route path='/HasilQuiz' element={<HasilQuiz />} />
           <Route path='/login' element={<LoginSignUp />} />
         </Routes>
         <Footer />

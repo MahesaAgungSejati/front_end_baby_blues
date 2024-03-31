@@ -51,8 +51,8 @@ export const Rubrik = () => {
 
           
           <div className='artikel-list'>
-      <h1>ARTIKEL TERBARU</h1>
       <hr />
+      <h3>Artikel Terbaru</h3>
       <div className='artikel-item'>
         <div className='artikel-card'>
           <img src={artikel_1} alt='' />
