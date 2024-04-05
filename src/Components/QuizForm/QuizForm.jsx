@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './QuizForm.css';
@@ -7,6 +7,17 @@ function QuizForm() {
   const [jawaban, setJawaban] = useState(Array(10).fill(0));
   const baseUrl = 'http://localhost:8080';
   const navigate = useNavigate();
+  const [showAlert, setShowAlert] = useState(false);
+  const [showConfirmation, setShowConfirmation] = useState(false);
+
+  useEffect(() => {
+    // Tampilkan pop-up alert setelah 5 detik
+    const timer = setTimeout(() => {
+      setShowAlert(true);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleOptionClick = (group, value) => {
     const newJawaban = [...jawaban];
@@ -17,7 +28,17 @@ function QuizForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    if (!showConfirmation) {
+      setShowConfirmation(true);
+      return;
+    }
+    setShowConfirmation(false); // sembunyikan pop-up konfirmasi setelah menekan tombol
     try {
+      if (jawaban.some(answer => answer === null)) {
+        alert('Anda belum menjawab semua pertanyaan!');
+        return;
+      }
+
       const dataToSend = {
         jawaban: jawaban
       };
@@ -70,6 +91,33 @@ function QuizForm() {
       <div className="tes-sindrom-container">
         <div className="tes-sindrom-soal">
           <form onSubmit={handleSubmit}>
+            {showAlert && (
+              <div className="popup">
+                <div className="popup-content">
+                  <h1>PERHATIKAN</h1>
+                  <h2>Tata Cara Mengerjakan Quiz</h2>
+                  <p>1. Bunda memilih dengan klik jawaban yang paling mendekati dengan apa yang ia rasakan selama tujuh hari sebelumnya.</p>
+                  <p>2. Kesepuluh pertanyaan harus diisi dengan lengkap dan sesuai persaraan bunda sekarang.</p>
+                  <p>3. Harus berhati-hati untuk menghindari kemungkinan bunda mendiskusikan jawabannya dengan orang lain.</p>
+                  <p>4. Bunda harus mengisi sendiri skala ini, kecuali jika bunda memiliki keterbatasan mobilisasi atau kesulitan membaca.</p>
+                  <p>5. Skala ini dapat digunakan pada enam hingga delapan minggu setelah kelahiran atau selama kehamilan.</p>
+                  <button onClick={() => setShowAlert(false)}>Saya Mengerti</button>
+                </div>
+              </div>
+               )}
+               {showConfirmation && (
+                 <div className="popup-confirmation">
+                   <div className="popup-content-confirmation">
+                     <h2>KONFIRMASI</h2>
+                     <p>Apakah Anda yakin ingin menyelesaikan quiz?</p>
+                     {/* <p>Anda bisa memeriksanya lagi jika belum yakin</p> */}
+                     <div>
+                       <button onClick={handleSubmit}>SUDAH</button>
+                       <button onClick={() => setShowConfirmation(false)}>BELUM</button>
+                     </div>
+                   </div>
+                 </div>
+               )}
             {/* Pertanyaan 1 */}
             <p>1. Saya bisa tertawa dan melihat sisi lucu dari berbagai hal :</p>
             <button type="button" className="option-btn" data-value="0" data-group="0" onClick={handleButtonClick}>Sebanyak yang saya bisa</button>
