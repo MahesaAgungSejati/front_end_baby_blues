@@ -7,7 +7,7 @@ export const Quiz = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate('/QuizForm');
+    navigate('/PilihanQuiz');
   };
 
   return (

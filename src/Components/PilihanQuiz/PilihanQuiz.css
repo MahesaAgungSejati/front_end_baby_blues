@@ -1,0 +1,122 @@
+.pilihan-quiz{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    height: 140vh;
+}
+.pilihan-quiz h1{
+    margin-top: 50px;
+    font-size: 40px;
+    font-weight: 600;
+    font-family: 'poppins';
+}
+.pilihan-quiz h2{
+    font-size: 22px;
+    font-weight: 500;
+}
+.pilihan-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+}
+
+.pilihan-quiz-satu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 30px;
+    height: 673px;
+    max-width: 435px;
+    border-radius: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.pilihan-quiz-dua{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 30px;
+    height: 673px;
+    max-width: 435px;
+    border-radius: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.pilihan-quiz-satu img{
+    width: 435px;
+    height: 300px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.pilihan-quiz-dua img{
+    width: 435px;
+    height: 300px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.quiz-satu-info{
+    width: 459px;
+    height: 270px;
+    text-align: left;
+    padding: 30px;
+    margin-top: -66px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.quiz-satu-info h1{
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+.quiz-satu-info p {
+    color: #65656b;
+    margin-bottom: 12px;
+}
+.quiz-satu-info button{
+    background-color: #EC744A;
+    width: 140px;
+    margin-top: 80px;
+    font-family: 'poppins';
+    font-weight: 450;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quiz-dua-info{
+    width: 459px;
+    height: 270px;
+    text-align: left;
+    padding: 30px;
+    margin-top: -66px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.quiz-dua-info h1{
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+.quiz-dua-info p {
+    color: #65656b;
+    margin-bottom: 12px;
+}
+.quiz-dua-info button{
+    background-color: #EC744A;
+    width: 140px;
+    font-family: 'poppins';
+    font-weight: 450;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    margin-top: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}

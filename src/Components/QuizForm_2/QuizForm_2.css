@@ -1,47 +1,48 @@
-.tes-sindrom{
+.tes-baby-blues{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 30px
 }
-.tes-sindrom-nama{
+.tes-nama{
     text-align: center;
     margin-top: 20px;
     margin-left: 165px;
     margin-right: 165px;
 }
-.tes-sindrom-nama h1{
+.tes-nama h1{
     font-size: 40px;
     font-weight: 600;
     font-family: 'poppins';
     margin-bottom: 20px;
+    margin-left: 200px;
+    margin-right: 200px;
 }
-.tes-sindrom-nama h2{
+.tes-nama h2{
     font-family: 'poppins';
     color: #5559;
     font-size: 15px;
     font-weight: 500;
 }
 
-.tes-sindrom-container{
+.tes-baby-container{
     border-bottom: 1px solid #dbdef0;
     padding-top: 16px;
     padding-bottom: 16px;
-    margin-left: 170px;
+    margin-left: -450px;
 }
-.tes-sindrom-soal{
+.tes-baby-soal{
     font-weight: 700;
     font-size: 16px;
     color: black;
     line-height: 19px;
     margin-top: 40px;
 }
-.tes-sindrom p{
+.tes-baby-soal p{
     margin-bottom: 15px;
     margin-top: 60px;
 }
-
-.tes-sindrom button{
+.tes-baby-soal button{
     margin: 10px;
     width: auto;
     height: 45px;
@@ -57,16 +58,14 @@
     font-weight: 600;
     transition: background-color 0.3s ease;
 }
-.tes-sindrom button:hover{
+.tes-baby-soal button:hover {
     background-color: #EC744A;
     color: white;
 }
-.tes-sindrom-submit button{
-    margin: 10px;
+.tes-baby-submit button{
     width: 440px;
     height: 40px;
-    margin-left: 400px;
-    padding-left: 10px;
+    margin-left: 490px;
     margin-top: 70px;
     border: 2px solid #9747FF;
     border-radius: 20px;
@@ -80,8 +79,7 @@
     font-weight: 600;
     transition: background-color 0.3s ease;
 }
-.tes-sindrom-submit button:hover{
+.tes-baby-submit button:hover{
     background-color: #9370CC;
     color: white;
-    border: none;
 }

@@ -8,7 +8,10 @@ import { Forum } from './Pages/Forum';
 import { Terapis } from './Pages/Terapis';
 import { SOS } from './Pages/SOS';
 import QuizForm from './Components/QuizForm/QuizForm';
+import QuizForm_2 from './Components/QuizForm_2/QuizForm_2';
+import PilihanQuiz from './Components/PilihanQuiz/PilihanQuiz';
 import HasilQuiz from './Components/QuizForm/HasilQuiz';
+import HasilQuiz_2 from './Components/QuizForm_2/HasilQuiz_2';
 
 import React from 'react';
 import Footer from './Components/Footer/Footer';
@@ -28,7 +31,10 @@ function App() {
             <Route path=':terapisId' element={<Terapis />} />
           </Route>
           <Route path='/QuizForm' element={<QuizForm />} />
+          <Route path='/QuizForm_2' element={<QuizForm_2 />} />
+          <Route path='/PilihanQuiz' element={<PilihanQuiz />} />
           <Route path='/HasilQuiz' element={<HasilQuiz />} />
+          <Route path='/HasilQuiz_2' element={<HasilQuiz_2 />} />
           <Route path='/login' element={<LoginSignUp />} />
         </Routes>
         <Footer />
