@@ -95,9 +95,9 @@ function QuizForm() {
               <div className="popup">
                 <div className="popup-content">
                   <h1>PERHATIKAN</h1>
-                  <h2>Tata Cara Mengerjakan Quiz</h2>
+                  <h2>Tata Cara & Informasi Mengerjakan Quiz</h2>
                   <p>1. Bunda memilih dengan klik jawaban yang paling mendekati dengan apa yang ia rasakan selama tujuh hari sebelumnya.</p>
-                  <p>2. Kesepuluh pertanyaan harus diisi dengan lengkap dan sesuai persaraan bunda sekarang.</p>
+                  <p>2. Kesepuluh pertanyaan harus diisi dengan lengkap dan sesuai perasaan bunda sekarang.</p>
                   <p>3. Harus berhati-hati untuk menghindari kemungkinan bunda mendiskusikan jawabannya dengan orang lain.</p>
                   <p>4. Bunda harus mengisi sendiri skala ini, kecuali jika bunda memiliki keterbatasan mobilisasi atau kesulitan membaca.</p>
                   <p>5. Skala ini dapat digunakan pada enam hingga delapan minggu setelah kelahiran atau selama kehamilan.</p>
