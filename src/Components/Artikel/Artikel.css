@@ -123,7 +123,7 @@
     font-weight: 600;
     height: 46px;
     width: 220px;
-    background: #20433D;
+    background: #007D6E;
     color: white;
     transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 1px 0px 2px 2px hsla(1, 1%, 1%, 0.1); /* Menambahkan transisi untuk background-color dan transform */

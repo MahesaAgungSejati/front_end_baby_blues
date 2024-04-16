@@ -33,16 +33,18 @@ function QuizForm() {
       return;
     }
     setShowConfirmation(false); // sembunyikan pop-up konfirmasi setelah menekan tombol
+  
+    // Periksa apakah semua pertanyaan telah dijawab
+    if (jawaban.some(answer => answer === 0)) {
+      alert('Anda belum menjawab semua pertanyaan!');
+      return;
+    }
+  
     try {
-      if (jawaban.some(answer => answer === null)) {
-        alert('Anda belum menjawab semua pertanyaan!');
-        return;
-      }
-
       const dataToSend = {
         jawaban: jawaban
       };
-
+  
       await axios.post(`${baseUrl}/simpanHasil`, dataToSend);
       setJawaban(Array(10).fill(0));
       
@@ -51,6 +53,7 @@ function QuizForm() {
       console.error('Gagal menyimpan jawaban:', error.message);
     }
   };
+  
 
   const updateTotalScore = () => {
     let totalScore = 0;

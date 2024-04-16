@@ -2,7 +2,7 @@ import React from 'react'
 import './Hero.css'
 // import hand_icon from '../Assets/hand_icon.png'
 import arrow_icon from '../Assets/arrow.png'
-import hero_image from '../Assets/hero_image_2.png'
+import hero_image_3 from '../Assets/hero_image_3.png'
 
 export const Hero = () => {
   return (
@@ -26,7 +26,7 @@ export const Hero = () => {
             </div>
         </div>
         <div className='hero-right'>
-            <img src={hero_image} alt=""/>
+            <img src={hero_image_3} alt=""/>
         </div>
     </div>
   )

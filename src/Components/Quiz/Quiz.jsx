@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Quiz.css';
-import ambil_tes_image_5 from '../Assets/ambil_tes_image_5.png';
+import ambil_tes_image_6 from '../Assets/ambil_tes_image_6.png';
 
 export const Quiz = () => {
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ export const Quiz = () => {
   return (
     <div className='quiz'>
       <div className="quiz-left">
-        <img src={ambil_tes_image_5} alt='' />
+        <img src={ambil_tes_image_6} alt='' />
       </div>
 
       <div className='quiz-right'>

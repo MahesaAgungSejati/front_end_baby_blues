@@ -55,10 +55,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 53px 100px;
+    margin: 15px 100px;
     height: 500px;
     max-width: 400px;
 }
 .quiz-left img{
-    height: 550px;
+    height: 570px;
 }

@@ -7,7 +7,7 @@ function QuizForm_2() {
   const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState({});
   const [showAlert, setShowAlert] = useState(false);
-  const [showConfirmation, setShowConfirmation] = useState(false); // State for confirmation pop-up
+  const [showConfirmation, setShowConfirmation] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -56,21 +56,36 @@ function QuizForm_2() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+  
     if (!showConfirmation) {
       setShowConfirmation(true);
       return;
     }
-    setShowConfirmation(false);
-    const formattedAnswers = {};
-    questions.forEach(question => {
-      formattedAnswers[question.id] = answers[question.id] || 0;
-    });
-    try {
-      await axios.post('http://localhost:8080/simpanHasil_2', { jawaban: formattedAnswers });
-      console.log('Hasil kuisioner berhasil disimpan.');
-      navigate('/HasilQuiz_2');
-    } catch (error) {
-      console.error('Error saving questionnaire results:', error);
+  
+    if (e.target.textContent === 'SUDAH') {
+      setShowConfirmation(false);
+      
+      // Check if all questions are answered
+      const unansweredQuestions = questions.filter(question => !answers.hasOwnProperty(question.id));
+      if (unansweredQuestions.length > 0) {
+        alert('Anda belum menjawab semua pertanyaan!');
+        return;
+      }
+  
+      // All questions are answered, proceed to save answers
+      const formattedAnswers = {};
+      questions.forEach(question => {
+        formattedAnswers[question.id] = answers[question.id] || 0;
+      });
+      try {
+        await axios.post('http://localhost:8080/simpanHasil_2', { jawaban: formattedAnswers });
+        console.log('Hasil kuisioner berhasil disimpan.');
+        navigate('/HasilQuiz_2');
+      } catch (error) {
+        console.error('Error saving questionnaire results:', error);
+      }
+    } else {
+      setShowConfirmation(false);
     }
   };
 
@@ -103,7 +118,6 @@ function QuizForm_2() {
              <div className="popup-content-confirmation">
                <h2>KONFIRMASI</h2>
                <p>Apakah Anda yakin ingin menyelesaikan quiz?</p>
-               {/* <p>Anda bisa memeriksanya lagi jika belum yakin</p> */}
                <div>
                  <button onClick={handleSubmit}>SUDAH</button>
                  <button onClick={() => setShowConfirmation(false)}>BELUM</button>

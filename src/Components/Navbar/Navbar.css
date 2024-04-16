@@ -1,8 +1,28 @@
-.navbar{
+.navbar {
     display: flex;
     justify-content: space-around;
     padding: 5px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    background-color: white; /* Menambahkan warna latar belakang */
+}
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    width: 100%;
+    transition: top 0.3s; /* Menambahkan efek transisi untuk smoothness */
+}
+
+.navbar.hide {
+    top: -100px; /* Menyembunyikan navbar ke atas saat tidak terlihat */
+}
+
+.navbar.show {
+    top: 0; /* Menampilkan navbar kembali ke posisi awal */
 }
 .nav-logo{
     display: flex;
