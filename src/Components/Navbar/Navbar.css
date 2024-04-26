@@ -37,6 +37,7 @@
     color: #171717;
     font-size: 15px;
     font-weight: 500;
+    margin-right: 30px;
 }
 .nav-menu li{
     display: flex;

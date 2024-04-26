@@ -1,41 +1,131 @@
-.hasil-tes{
+/* HasilQuiz.css */
+
+.hasil-tes {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 160px
+    margin-top: 160px;
 }
-.hasil-tes-nama{
+
+.hasil-tes-nama {
     text-align: center;
-    margin-top: 20px;
-    margin-left: 165px;
-    margin-right: 165px;
+    margin: 20px 165px;
 }
-.hasil-tes-nama h1{
+
+.hasil-tes-nama h1 {
     font-size: 40px;
     font-weight: 600;
     font-family: 'poppins';
     margin-bottom: 20px;
 }
-.kesimpulan-container{
+
+.kesimpulan-container {
+    display: flex;
+    height: 400px;
+    flex-direction: column;
     align-items: center;
-    box-shadow: #9370CC 0px 1px 4px, #9370CC 0px 0px 0px 3px;
+    box-shadow: 0px 1px 4px rgba(147, 112, 204, 0.5), 0px 0px 0px 3px rgba(147, 112, 204, 0.5);
     border-radius: 10px;
-    margin-top: 30px;
-    margin-bottom: 200px;
-    margin-left: 350px;
-    margin-right: 350px;
+    margin: 30px 350px 200px 350px;
 }
-.hasil-tes-kesimpulan{
+
+.hasil-tes-kesimpulan {
     text-align: center;
-    margin-left: 25px;
-    margin-right: 25px;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin: 78px 25px;
 }
-.hasil-tes-kesimpulan h1{
+
+.hasil-tes-kesimpulan h1 {
     margin-bottom: 20px;
 }
-.hasil-tes-kesimpulan h2{
+
+.hasil-tes-kesimpulan h2 {
     margin-bottom: 30px;
     font-weight: 500;
 }
+
+/* HasilQuiz.css */
+
+.title-video {
+    font-size: 15px;
+    font-weight: 600;
+    text-align: left;
+    margin-left: 135px;
+    margin-bottom: 20px;
+  }
+  .title-video hr {
+    height: 3.8px;
+    background: #afabab;
+    margin-bottom: 20px;
+    width: 1420px;
+  }
+  
+  .video-model {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: flex-start;
+    margin-right: 100px;
+  }
+  
+  .video-container {
+    margin-left: 10px;
+  }
+  
+  .video-tampilan video {
+    width: 90%;
+    border-radius: 6px;
+  }
+  
+  .video-caption {
+    margin-top: 8px;
+    margin-right: 25px;
+  }
+  .video-caption p{
+    color: #655f5f;
+  }
+
+
+  .title-audio {
+    font-size: 15px;
+    font-weight: 600;
+    text-align: left;
+    margin-top: 30px;
+    margin-left: 120px;
+    margin-bottom: 80px;
+  }
+  .title-audio hr {
+    height: 3.8px;
+    margin-top: 20px;
+    background: #afabab;
+    margin-bottom: 20px;
+    width: 1420px;
+  }
+  
+  .audio-model {
+    margin-top: 5px;
+    display: flex;
+    gap: px;
+    justify-content: center;
+    align-items: flex;
+    margin-top: 30px;
+  }
+  
+  .audio-tempat {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  .audio-tampilan audio {
+    width: 420px;
+    margin-right: 80px;
+    margin-left: -0px;
+  }
+  
+  .audio-caption {
+    margin-top: 8px;
+    margin-right: 30px;
+  }
+  .audio-caption h3{
+    margin-right: 90px;
+  }

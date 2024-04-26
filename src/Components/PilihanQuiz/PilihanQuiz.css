@@ -27,7 +27,7 @@
     flex-direction: column;
     align-items: center;
     margin: 0 30px;
-    height: 673px;
+    height: 600px;
     max-width: 435px;
     border-radius: 10px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
@@ -37,7 +37,7 @@
     flex-direction: column;
     align-items: center;
     margin: 0 30px;
-    height: 673px;
+    height: 600px;
     max-width: 435px;
     border-radius: 10px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
@@ -68,17 +68,23 @@
     border-bottom-right-radius: 10px;
 }
 .quiz-satu-info h1{
-    font-size: 30px;
+    font-size: 20px;
     margin-bottom: 8px;
 }
 .quiz-satu-info p {
     color: #65656b;
     margin-bottom: 12px;
+    font-size: 14px;
+
+
+
+
+
 }
-.quiz-satu-info button{
+.quiz-dua-info button{
     background-color: #EC744A;
     width: 140px;
-    margin-top: 80px;
+    margin-top:11px;
     font-family: 'poppins';
     font-weight: 450;
     color: #fff;
@@ -100,14 +106,15 @@
     border-bottom-right-radius: 10px;
 }
 .quiz-dua-info h1{
-    font-size: 30px;
+    font-size: 22px;
     margin-bottom: 8px;
 }
 .quiz-dua-info p {
     color: #65656b;
     margin-bottom: 12px;
+    font-size: 14px;
 }
-.quiz-dua-info button{
+.quiz-satu-info button{
     background-color: #EC744A;
     width: 140px;
     font-family: 'poppins';
@@ -116,8 +123,173 @@
     border: none;
     border-radius: 8px;
     padding: 10px 16px;
-    margin-top: 10px;
+    margin-top: 29px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
+.popup-pilihan {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Warna latar belakang agak gelap */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Pastikan pop-up muncul di atas konten lain */
+    animation: fadeIn 1s ease; /* Animasi fadeIn */
+  }
+  
+  .popup-pilihan-first {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    text-align: left;
+    animation: slideIn 1s ease; /* Animasi slideIn */
+  }
+  
+  .popup-pilihan-first h1 {
+    margin-top: 30px;
+    text-align: center;
+    color: #d65a2c;
+  }
+  .popup-pilihan-first h3 {
+    margin-top: 30px;
+    text-align: center;
+  }
+  .popup-pilihan-first h2 {
+    margin-top: 30px;
+    text-align: justify;
+    font-size: 18px;
+  }
+  
+  .popup-pilihan-first p {
+    margin-bottom: -10px;
+    text-align: center;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  
+  .popup-pilihan-first button {
+    padding: 8px 20px;
+    background-color: #EC744A;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 60px;
+    margin-left: 125px;
+    width: 300px;
+    font-size: 16px;
+    font-family: 'poppins';
+    font-weight: 600;
+  }
+  
+  .popup-pilihan-first button:hover {
+    background-color: #eda083;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Keyframes untuk slideIn */
+  @keyframes slideIn {
+    from {
+      transform: translateY(-50px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+
+.popup-tes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Warna latar belakang agak gelap */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Pastikan pop-up muncul di atas konten lain */
+    animation: fadeIn 1s ease; /* Animasi fadeIn */
+  }
+  
+  .popup-pilihan-tes {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    text-align: left;
+    animation: slideIn 1s ease; /* Animasi slideIn */
+  }
+  
+  .popup-pilihan-tes h1 {
+    margin-top: 30px;
+    text-align: center;
+    color: #d65a2c;
+  }
+  .popup-pilihan-tes h2 {
+    margin-top: 30px;
+    text-align: justify;
+    font-size: 18px;
+  }
+  
+  .popup-pilihan-tes p {
+    margin-bottom: -10px;
+    text-align: center;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 40px;
+    font-size: 17px;
+  }
+  
+  .popup-pilihan-tes button {
+    padding: 8px 20px;
+    background-color: #EC744A;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 40px;
+    margin-left: 125px;
+    width: 300px;
+    font-size: 16px;
+    font-family: 'poppins';
+    font-weight: 600;
+  }
+  
+  .popup-pilihan-tes button:hover {
+    background-color: #eda083;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Keyframes untuk slideIn */
+  @keyframes slideIn {
+    from {
+      transform: translateY(-50px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
